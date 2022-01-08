@@ -1,0 +1,19 @@
+.Header{
+    text-decoration:none;
+    color: green;
+}
+.tools{
+    background-color:rgb(240, 235, 235);
+}
+.img-fluid{
+    border: green solid 2px;
+    box-shadow: 0px 0px 5px green,0px 0px 25px green,0px 0px 30px green;
+    border-radius: 10px;
+}
+.certificate{
+    width:45%;
+    position:fixed;
+    bottom:50px;
+    right:20px;
+    
+}

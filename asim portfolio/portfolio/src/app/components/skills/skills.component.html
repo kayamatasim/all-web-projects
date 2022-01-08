@@ -1,0 +1,13 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<table>
+    <tr>
+        <th>skills</th>
+        <th>level</th>
+    </tr>
+    <tr *ngFor="let x of skills |keyvalue">
+        <td>{{x.key}}</td>
+        <td><span  *ngFor="let e of [].constructor(x.value)" class="fa fa-star checked">_</span></td>
+    </tr>
+</table>
+
+
