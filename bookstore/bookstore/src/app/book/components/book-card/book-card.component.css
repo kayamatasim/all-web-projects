@@ -1,0 +1,7 @@
+.imgbox{
+    height: 250px;
+    overflow: hidden;
+}
+img{
+    height: 100%;
+}

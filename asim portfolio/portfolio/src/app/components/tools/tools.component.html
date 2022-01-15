@@ -32,9 +32,9 @@
         <div class="col-sm-6">
             <div id="parent">
                 <div *ngFor="let x of images | keyvalue">
-                      
-                            <img  src="{{x.value}}" alt="asim" class="=collapse {{x.key}} img-fluid certificate" data-bs-parent="#parent"  aria-expanded="false">
-                        
+                      <div class="collapse {{x.key}}" data-bs-parent="#parent"  aria-expanded="false">
+                            <img  src="{{x.value}}" alt="asim" class="=collapse img-fluid certificate">
+                        </div>
             </div>
             </div>
         </div>

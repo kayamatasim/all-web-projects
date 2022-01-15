@@ -4,12 +4,16 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { ToolsComponent } from './components/tools/tools.component';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { EducationComponent } from './components/education/education.component';
+import { AdminnComponent } from './adminn/adminn.component';
+
 
 const routes: Routes = [
   {path:'components/skills',component:SkillsComponent},
   {path:'components/tools',component:ToolsComponent},
   {path:'components/experience',component:ExperienceComponent},
-  {path:'components/education',component:EducationComponent}
+  {path:'components/education',component:EducationComponent},
+  {path:'admin',component:AdminnComponent}
+
 ];
 
 @NgModule({
