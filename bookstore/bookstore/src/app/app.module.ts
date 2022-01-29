@@ -12,6 +12,8 @@ import { FormsModule } from '@angular/forms';
 import { AddbookComponent } from './addbook/addbook/addbook.component';
 import { HomeComponent } from './home/components/home/home.component';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 const routes=[
@@ -33,7 +35,8 @@ const routes=[
     RouterModule.forRoot(routes),
     AddbookModule,
     FormsModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule
   ],
   // exports:[AddbookComponent],
   providers: [],

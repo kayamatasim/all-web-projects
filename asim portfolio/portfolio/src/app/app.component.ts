@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'portfolio';
+  visible=true;
+  counter:number=0;
+  changeithere(da:any){
+      da==='inc'?this.counter++:this.counter--;
+      console.log(da)
+  }
+  title = 'its working';
+
 }

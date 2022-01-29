@@ -1,6 +1,8 @@
+
 import { Component, OnInit } from '@angular/core';
 import { BookModel } from '../../book/models/book.model';
-
+import { HttpClient } from '@angular/common/http';
+import { BookService } from 'src/app/servises/book-service.service';
 
 @Component({
   selector: 'app-addbook',
@@ -8,46 +10,54 @@ import { BookModel } from '../../book/models/book.model';
   styleUrls: ['./addbook.component.css']
 })
 export class AddbookComponent implements OnInit {
-  hen='nothing'
+
+  constructor(private bookapi:BookService) { }
+
   list:BookModel[]=[]
   bookname!:string;
   price!:any;
   author!:string;
-  id!:any;
+
   image!:string;
+  apidata!:string;
   addbook(){
     let book:BookModel={
-      id: this.price,
+    
       name: this.bookname,
       author: this.author,
       price: this.price,
       imgSrc: this.image
     };
-    this.list.push(book);
-    console.log(this.list);
-  }
-  constructor() { }
+    alert(JSON.stringify(book));
+    
+    this.bookapi.postbook(book).subscribe((book)=>{
+      alert('submitted'+JSON.stringify(book)),
+      (err:any)=>{alert(err)}
+    }
+     
+    ,
+    (err)=>{alert("error occures"+JSON.stringify(err))},
+    ()=>{
+      alert('done');
+    })
+    
+
+ }
+
+
+  
+  
+ 
 
   ngOnInit(): void {
-    let bookname=document.querySelector('input#bookname');
-    let price=document.querySelector('input#price');
-    
-    let author=document.querySelector('input#author');
-    let id=document.querySelector('input#id');
-    let image=document.querySelector('input#imgsrc');
-    let addbtn=document.querySelector('input#add');
-
-    addbtn?.addEventListener('click',()=>{
-     (<HTMLInputElement>bookname).value=this.bookname;
-     (<HTMLInputElement>price).value=this.price;
-     (<HTMLInputElement>author).value=this.author;
-     (<HTMLInputElement>id).value=this.id;
-     (<HTMLInputElement>image).value=this.image;
-        this.addbook()
-    })
-
-
-    
+ 
   }
 
 }
+
+  // async callapi(){
+  //  let res= await fetch('127.0.0.1:3100');
+  //  let data=await res.json();
+  //   this.apidata=data;
+  //   console.log(this.apidata);
+  // }

@@ -1,1 +1,21 @@
-<p>education works!</p>
+<button (click)="countercontrol('inc')"> increase</button>
+<button (click)="countercontrol('dec')"> decrease</button>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-5">
+           <div *ngFor=" let user of users" >
+
+                   <a routerLink="{{user.id}}"> {{user.name}}</a>
+                   
+     
+        
+           </div> 
+        </div>
+        <div class="col-sm-5">
+           <router-outlet></router-outlet>
+          
+        </div>
+    </div>
+</div>

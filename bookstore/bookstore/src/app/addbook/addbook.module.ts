@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AddbookComponent } from './addbook/addbook.component';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from '../app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { AppRoutingModule } from '../app-routing.module';
     CommonModule,
     FormsModule,
   
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   
   ],
   exports:[

@@ -1,15 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,EventEmitter, Output } from '@angular/core';
+
+import { UsersService } from '../../servises/users.service';
 
 @Component({
   selector: 'app-education',
   templateUrl: './education.component.html',
   styleUrls: ['./education.component.css']
 })
-export class EducationComponent implements OnInit {
+export class EducationComponent  implements OnInit {
 
-  constructor() { }
+ @Output() changeit:EventEmitter<string> = new EventEmitter<string>();
 
-  ngOnInit(): void {
+
+  countercontrol(property:string){
+    this.changeit.emit(property);
+    console.log('clicked')
   }
 
+  constructor(private UsersService:UsersService){}
+  users:any;
+
+
+  ngOnInit(): void {
+      // this.users=this.UsersService.users;
+      
+      this.UsersService.getusersonline().subscribe(user=>this.users=user);
+  }
+ 
 }

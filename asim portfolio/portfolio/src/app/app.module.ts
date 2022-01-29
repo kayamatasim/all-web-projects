@@ -8,7 +8,9 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { ToolsComponent } from './components/tools/tools.component';
 import { EducationComponent } from './components/education/education.component';
-
+import { Education_detailsComponent } from './components/education_details/education_details.component';
+import { PlaceholderComponent } from './components/placeholder/placeholder.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,12 +20,15 @@ import { EducationComponent } from './components/education/education.component';
     ExperienceComponent,
     ToolsComponent,
     EducationComponent,
+   Education_detailsComponent,
+   PlaceholderComponent,
     routingComponents
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AdminnModule
+    AdminnModule,
+    HttpClientModule
 
    
   ],
