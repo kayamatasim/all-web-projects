@@ -8,7 +8,7 @@
 var fs= require("fs");
 
 
-fs.appendFile("text",'somethihg \n',function(){console.log('data saved')});
+fs.appendFile("text",'somethihg sometimes\n',function(){console.log('data saved')});
 
 
 fs.readFile("text","utf-8",function(err,data){
