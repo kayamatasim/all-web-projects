@@ -10,10 +10,9 @@ export class BookService {
 
 constructor(private http: HttpClient) { }
 url="http://localhost:3100/api/book"
+
+
 getBooks(){
-  console.log('gotyaa')
-  // new HttpClient();
-  // calling api. (client->server communication)
   return this.http.get(this.url)
     .pipe(map((res)=> res));
    
