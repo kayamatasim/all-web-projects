@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { BookModel } from '../../book/models/book.model';
 import { HttpClient } from '@angular/common/http';
 import { BookService } from 'src/app/servises/book-service.service';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-addbook',
@@ -14,36 +15,26 @@ export class AddbookComponent implements OnInit {
   constructor(private bookapi:BookService) { }
 
   list:BookModel[]=[]
-  bookname!:string;
-  price!:any;
-  author!:string;
+ 
+  bookref=new FormGroup({
+    name:new FormControl(),
+    author:new FormControl(),
+    price:new FormControl(),
+    imgsrc:new FormControl()
 
-  image!:string;
-  apidata!:string;
-  addbook(){
-    let book:BookModel={
-    
-      name: this.bookname,
-      author: this.author,
-      price: this.price,
-      imgSrc: this.image
-    };
-    alert(JSON.stringify(book));
-    
-    this.bookapi.postbook(book).subscribe((book)=>{
-      alert('submitted'+JSON.stringify(book)),
-      (err:any)=>{alert(err)}
-    }
-     
-    ,
-    (err)=>{alert("error occures"+JSON.stringify(err))},
-    ()=>{
-      alert('done');
-    })
-    
+  })
 
- }
+ 
+addbook(){
+  let book=this.bookref.value;
+  console.log(book);
 
+  this.bookapi.postbook(book).subscribe(res=>{
+    console.log(res)
+  },
+  (err)=>{console.log(err)},
+  ()=>{console.log('finished')})
+}
 
   
   

@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit {
     const bookobservable=this.bookService.getBooks()
     bookobservable.subscribe(
       (result:any)=>{this.books=result;
+        
       
       },
       (err:any)=>{console.log(err)},

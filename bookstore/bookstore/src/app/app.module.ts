@@ -8,11 +8,12 @@ import { SharedModule } from './shared/shared.module';
 import { BookModule } from './book/book.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AddbookModule } from './addbook/addbook.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddbookComponent } from './addbook/addbook/addbook.component';
 import { HomeComponent } from './home/components/home/home.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+
 
 
 
@@ -36,7 +37,8 @@ const routes=[
     AddbookModule,
     FormsModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   // exports:[AddbookComponent],
   providers: [],

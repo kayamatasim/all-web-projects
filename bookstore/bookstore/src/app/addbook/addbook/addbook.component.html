@@ -1,38 +1,19 @@
 <div class="container m-5">
     <div class="row">
         <div class="col-sm-6">
-            <form #f="ngForm">
-                <label class="form-label" >bookname</label>
-                <input class="form-control" name="hen" [(ngModel)]="bookname" required >
+            <form [formGroup]="bookref" (ngSubmit)="addbook()">
+             <label class="form-label">name</label>
+             <input type="text" class="form-control" formControlName="name" >
+             <label class="form-label">author</label>
+             <input type="text" class="form-control"  formControlName="author" >
+             <label class="form-label">price</label>
+             <input type="text" class="form-control"  formControlName="price" >
+             <label class="form-label">image sourse</label>
+             <input type="text" class="form-control"  formControlName="imgsrc" >
+             <button type="submit" class="btn btn-success m-2">submit</button>
+             <button type="reset" class="btn btn-warning m-1">reset</button>
 
-                 <label class="form-label" for="#author" >author</label>
-                <input type="text" class="form-control" name="author" [(ngModel)]="author" required>
-               <label class="form-label" for="#price">price</label>
-                <input  class="form-control" type="number" name="price" [(ngModel)]="price" required >
-                
-
-
-                <label class="form-label" for="#imgsrc">image sourse</label>
-                <input type="text" class="form-control" type="text" name="imagesrc" [(ngModel)]="image" required>
-            
-          
-    
-
-                <button type="button" id="add" class="btn btn-success" (click)="addbook()" [disabled]="!f.valid" >submit</button>
-           </form>
-        </div>
-        <div class="col sm-5">
-        <div *ngFor="let x of list">
-          <ul>
-              <li>name:{{x.name}}</li>
-              <li>author:{{x.author}}</li>
-              <li>price:{{x.price}}</li>
-           
-              <li>image sourse:{{x.imgSrc}}</li>
-          </ul>
-        
-             
-        </div>
+            </form>
         </div>
     </div>
 </div>

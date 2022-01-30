@@ -11,8 +11,8 @@ function giveBooks(books){
     cb(books);
 }
 
-
-exports.postone=()=>{
-    return mongodbconfig.getcollection('books');
-   
+exports.postone=(book)=>{
+    const collection=mongodbconfig.getcollection('books');
+    collection.insertOne(book).then(res=>console.log('record stored')).catch(err=>console.log(err));
+    
 }

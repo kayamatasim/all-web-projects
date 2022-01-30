@@ -4,8 +4,8 @@ const controller=require("../controller/book");
 
 
 const router= express.Router();
-router.get('/',controller.getAll);
+router.get('/getall',controller.getAll);
 
-router.post('/',controller.postone());
+router.post('/storebook',controller.postone);
 
 module.exports=router;

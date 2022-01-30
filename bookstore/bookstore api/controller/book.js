@@ -14,16 +14,22 @@ exports.getAll=(req,res)=>{
   
 }
 
-exports.postone=()=>{
- return (req,res)=>{
-    var book=new BookModel(req.name,req.auther,req.price,req.imgsrc);
-    console.log(res)
 
-    repo.postone().insert(book);
+exports.postone=(req,res)=>{
+    console.log('function to upload book')
 
-    console.log(book);
- }
-   
+     let book=req.body;
+   console.log('done');
+    res.send("done"+JSON.stringify(book));
+
+    repo.postone(book);
+    // repo.getAll((books)=>{
+    //        res.send(books);
+           
+             
+    // })
+  
+}
   
   
 
@@ -39,4 +45,3 @@ exports.postone=()=>{
    
 
    
-}
